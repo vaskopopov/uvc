@@ -1,0 +1,121 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+
+  <style>
+	  /*  FOOTER  */
+	footer {
+		position: absolute;
+		bottom: 0;
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+	}
+
+  </style>
+</head>
+
+<body>
+	
+	<div class="container">
+		<div class="header text-center">
+			<h1>Калкулатор за пресметка на бактерицидни цевки</h1>
+		</div>
+		<hr>
+		<div class="row">
+			<div class="col-md-5">
+				  <div class="form-group">
+					<label for="prostorija">Квадратни метри на просторијата</label>
+					<input type="text" class="form-control" id="prostorija" placeholder="Enter square meters of the space">
+				  </div>
+				  
+				  <div class="form-group">
+					<label for="tuvSelect">Одберете ја бактерицидната сијалица:</label>
+					<select class="form-control" id="tuvSelect">
+					  <option selected value="" hidden>....</option>
+					  <option value="2.4">TUV 8W (2.4W UV-C)</option>
+					  <option value="4.9">TUV 15W (4.9W UV-C)</option>
+					  <option value="4.5">TUV 18W (4.5W UV-C)</option>
+					  <option value="7">TUV 25W (7W UV-C)</option>
+					  <option value="12">TUV 30W (12W UV-C)</option>
+					  <option value="15">TUV 36W (15W UV-C)</option>
+					  <option value="17.5">TUV HO 55W (17.5W UV-C)</option>
+					  <option value="25.5">TUV HO 75W (25.5W UV-C)</option>
+					  <option value="5.5">TUV PL-L 18W (5.5W UV-C)</option>
+					  <option value="7.1">TUV PL-L 24W (7.1W UV-C)</option>
+					  <option value="12">TUV PL-L 36W (12W UV-C)</option>
+					  <option value="17">TUV PL-L 55W (17W UV-C)</option>
+					</select>
+				  </div>
+			</div>
+			<div class="col-md-7">
+				<div id="infoReport">
+					<div class="potrebnaRadijacija">
+
+					</div>
+					<div class="optimalnaKolicina">
+
+					</div>
+				</div>
+			</div>
+		</div>
+		
+		
+		
+		
+	</div>
+	
+
+    <footer>
+		<p>&copy; Vasko - VINT dooel</p>
+	</footer>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+	<script src="js/main.js"></script>
+	<script>
+	$(document).ready(function(){
+
+		$(document).on('keyup','#prostorija',function(){
+			let prostorija=parseInt($('#prostorija').val());
+			$('#tuvSelect').val('');
+			$('.optimalnaKolicina').html("");
+			$('.potrebnaRadijacija').html("");
+			let info="<p>За дезинфекција на простор од <span class='prostor'></span>m<sup>2</sup> потребни се <span class='radijacija'></span>W UV-C зрачење</p>";
+			radijacijaProstor=parseFloat(prostorija)*0.35*1.25/0.8;
+			
+			$('.potrebnaRadijacija').append(info);
+			$('.prostor').html(prostorija);
+			$('.radijacija').html(radijacijaProstor.toFixed(4));
+			// $('.potrebnaRadijacija').html(radijacijaProstor);
+		})
+
+		$('#tuvSelect').on('change',function(){
+			let optimalnaQtyHtml=$('.optimalnaKolicina').html("");
+			let radijacija=$(this).val();
+			
+			let html = '<p>Одбраната сијалица има <b>'+ radijacija+'W</b> UV-C радијација.</p><br>';
+			// html+='<p>За дезинфекција на простор од ' + $('#prostorija').val() + 'm<sup>2</sup> потребни се  ' +radijacijaProstor.toFixed(4) + 'W UV-C зрачење</p>';
+			optimalnaQtyHtml.append(html);
+			let optQty=Math.floor(radijacijaProstor/radijacija);
+			html='<p>Според одбраната сијалица, оптимална потребна количина би била <b>'+optQty+'</b><p>';
+			optimalnaQtyHtml.append(html);
+			
+			
+		});
+	});
+	</script>
+  </body>
+</html>
