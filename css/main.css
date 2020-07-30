@@ -1,0 +1,8 @@
+	  /*  FOOTER  */
+	footer {
+		position: absolute;
+		bottom: 0;
+		display: inline-block;
+		text-align: center;
+		width: 100%;
+	}
