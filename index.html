@@ -110,7 +110,7 @@
 			// html+='<p>За дезинфекција на простор од ' + $('#prostorija').val() + 'm<sup>2</sup> потребни се  ' +radijacijaProstor.toFixed(4) + 'W UV-C зрачење</p>';
 			optimalnaQtyHtml.append(html);
 			let optQty=Math.ceil(radijacijaProstor/radijacija);
-			html='<p>Според одбраната сијалица, оптимална потребна количина би била <b>'+optQty+'</b><p>';
+			html='<p>Според одбраната сијалица, оптимална потребна количина би била <b>'+optQty+'</b> ('+radijacija*optQty+')<p>';
 			optimalnaQtyHtml.append(html);
 			
 			
