@@ -15,7 +15,7 @@ $(document).ready(function(){
 // 		})
 	$(document).on('keyup','#prostorija',function(){
 	let prostorija=parseFloat($('#prostorija').val());
-		console.log(prostorija));
+		console.log(prostorija);
 	$('#tuvSelect').val('');
 	$('.optimalnaKolicina').html("");
 	$('.potrebnaRadijacija').html("");
