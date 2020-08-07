@@ -11,8 +11,8 @@ $(document).ready(function(){
 		$('.potrebnaRadijacija').append(info);
 		$('.prostor').html(prostorija);
 		$('.radijacija').html(radijacijaProstor.toFixed(4));
-		$('.potrebnaRadijacija').html(radijacijaProstor);
-	});
+		// $('.potrebnaRadijacija').html(radijacijaProstor);
+	})
 // 	$(document).on('keyup','#prostorija',function(){
 // 	let prostorija=parseFloat($('#prostorija').val());
 // 		console.log(prostorija);
