@@ -13,32 +13,7 @@ $(document).ready(function(){
 		$('.radijacija').html(radijacijaProstor.toFixed(4));
 		// $('.potrebnaRadijacija').html(radijacijaProstor);
 	})
-// 	$(document).on('keyup','#prostorija',function(){
-// 	let prostorija=parseFloat($('#prostorija').val());
-// 		console.log(prostorija);
-// 	$('#tuvSelect').val('');
-// 	$('.optimalnaKolicina').html("");
-// 	$('.potrebnaRadijacija').html("");
-// 	let info="<p>За дезинфекција на простор од <span class='prostor'></span>m<sup>2</sup> потребни се <span class='radijacija'></span>W UV-C зрачење</p>";
-// 	$.ajax({
-// 	  type: "POST",
-// 	  url: "https://popov.xyz/vint/tuv-calc.php",
-// 	  data: { room: parseFloat(prostorija)},
-// 	  // success: success,
-// 	  dataType: "json"
-// 	})
-// 	 .done(function(data){
-// 		console.log(data);
-		
-// 	 });
-// 	radijacijaProstor=parseFloat(prostorija)*0.35*1.25/0.8;
 	
-// 	$('.potrebnaRadijacija').append(info);
-// 	$('.prostor').html(prostorija);
-// 	$('.radijacija').html(radijacijaProstor.toFixed(4));
-// 	$('.potrebnaRadijacija').html(radijacijaProstor);
-// 	});
-
 	$('#tuvSelect').on('change',function(){
 		let optimalnaQtyHtml=$('.optimalnaKolicina').html("");
 		let radijacija=$(this).val();
