@@ -31,13 +31,13 @@ $(document).ready(function(){
 // 		console.log(data);
 		
 // 	 });
-// 	//radijacijaProstor=parseFloat(prostorija)*0.35*1.25/0.8;
+	radijacijaProstor=parseFloat(prostorija)*0.35*1.25/0.8;
 	
-// 	//$('.potrebnaRadijacija').append(info);
-// 	//$('.prostor').html(prostorija);
-// 	//$('.radijacija').html(radijacijaProstor.toFixed(4));
-// 	// $('.potrebnaRadijacija').html(radijacijaProstor);
-// });
+	$('.potrebnaRadijacija').append(info);
+	$('.prostor').html(prostorija);
+	$('.radijacija').html(radijacijaProstor.toFixed(4));
+	$('.potrebnaRadijacija').html(radijacijaProstor);
+});
 
 		$('#tuvSelect').on('change',function(){
 			let optimalnaQtyHtml=$('.optimalnaKolicina').html("");
