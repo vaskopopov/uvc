@@ -1,4 +1,7 @@
-	  /*  FOOTER  */
+	 body {
+		 background-color: #bfbdff;
+	 }
+	 /*  FOOTER  */
 	footer {
 		position: absolute;
 		bottom: 0;
