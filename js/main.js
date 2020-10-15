@@ -26,7 +26,13 @@ $(document).ready(function(){
 	$('#tuvSelect').on('change',function(){
 		let optimalnaQtyHtml=$('.optimalnaKolicina').html("");
 		let radijacija=$(this).val();
-
+		
+		if ($('#prostorija').val()==""){
+			alert('Немате внесено квадратура на просторија');
+			$('#tuvSelect').val('');
+			$('#prostorija').focus();
+		} 
+		
 		let html = '<p>Одбраната сијалица има <b>'+ radijacija+'W</b> UV-C радијација.</p><br>';
 		// html+='<p>За дезинфекција на простор од ' + $('#prostorija').val() + 'm<sup>2</sup> потребни се  ' +radijacijaProstor.toFixed(4) + 'W UV-C зрачење</p>';
 		optimalnaQtyHtml.append(html);
