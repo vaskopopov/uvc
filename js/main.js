@@ -1,5 +1,7 @@
 $(document).ready(function(){
 
+	($('#prostorija').val()=='' || $('#tuvSelect').val()=='')) ? $('#infoReport').hide();
+	
 	$(document).on('keyup','#prostorija',function(){
 		let prostorija=parseInt($('#prostorija').val());
 		$('#tuvSelect').val('');
@@ -11,6 +13,7 @@ $(document).ready(function(){
 		$('.potrebnaRadijacija').append(info);
 		$('.prostor').html(prostorija);
 		$('.radijacija').html(radijacijaProstor.toFixed(4));
+		$('#infoReport').show();
 		// $('.potrebnaRadijacija').html(radijacijaProstor);
 	})
 	
@@ -24,7 +27,6 @@ $(document).ready(function(){
 		let optQty=Math.ceil(radijacijaProstor/radijacija);
 		html='<p>Според одбраната сијалица, оптимална потребна количина би била <b>'+optQty+'</b> ('+(radijacija*optQty).toFixed(2)+'W UV-C)<p>';
 		optimalnaQtyHtml.append(html);
-
-
+		$('#infoReport').show();
 	});
 });
