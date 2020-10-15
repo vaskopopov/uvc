@@ -1,6 +1,6 @@
 $(document).ready(function(){
 
-	($('#prostorija').val()=='' || $('#tuvSelect').val()=='')) ? $('#infoReport').hide();
+	($('#prostorija').val()=='' || $('#tuvSelect').val()=='') ? $('#infoReport').hide();
 	
 	$(document).on('keyup','#prostorija',function(){
 		let prostorija=parseInt($('#prostorija').val());
