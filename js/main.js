@@ -5,6 +5,7 @@ $(document).ready(function(){
 	$(document).on('keyup','#prostorija',function(){
 		let prostorija=parseInt($('#prostorija').val());
 		$('#tuvSelect').val('');
+		$('#infoReport').hide();
 		$('.optimalnaKolicina').html("");
 		$('.potrebnaRadijacija').html("");
 		let info="<p>За дезинфекција на простор од <span class='prostor'></span>m<sup>2</sup> потребни се <span class='radijacija'></span>W UV-C зрачење</p>";
