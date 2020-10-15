@@ -1,6 +1,10 @@
 $(document).ready(function(){
 
-	($('#prostorija').val()=='' || $('#tuvSelect').val()=='') ? $('#infoReport').hide() : $('#infoReport').show()
+// 	($('#prostorija').val()=='' || $('#tuvSelect').val()=='') ? $('#infoReport').hide() : $('#infoReport').show()
+	
+	$('#prostorija').on('keyup',function(){
+		$(this).val()=='' ? $('#infoReport').hide() : $('#infoReport').show(); 
+	});
 	
 	$(document).on('keyup','#prostorija',function(){
 		let prostorija=parseInt($('#prostorija').val());
