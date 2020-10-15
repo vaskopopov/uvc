@@ -31,14 +31,15 @@ $(document).ready(function(){
 			alert('Немате внесено квадратура на просторија');
 			$('#tuvSelect').val('');
 			$('#prostorija').focus();
-		} 
-		
-		let html = '<p>Одбраната сијалица има <b>'+ radijacija+'W</b> UV-C радијација.</p><br>';
-		// html+='<p>За дезинфекција на простор од ' + $('#prostorija').val() + 'm<sup>2</sup> потребни се  ' +radijacijaProstor.toFixed(4) + 'W UV-C зрачење</p>';
-		optimalnaQtyHtml.append(html);
-		let optQty=Math.ceil(radijacijaProstor/radijacija);
-		html='<p>Според одбраната сијалица, оптимална потребна количина би била <b>'+optQty+'</b> ('+(radijacija*optQty).toFixed(2)+'W UV-C)<p>';
-		optimalnaQtyHtml.append(html);
+		} else {
+			let html = '<p>Одбраната сијалица има <b>'+ radijacija+'W</b> UV-C радијација.</p><br>';
+			// html+='<p>За дезинфекција на простор од ' + $('#prostorija').val() + 'm<sup>2</sup> потребни се  ' +radijacijaProstor.toFixed(4) + 'W UV-C зрачење</p>';
+			optimalnaQtyHtml.append(html);
+			let optQty=Math.ceil(radijacijaProstor/radijacija);
+			html='<p>Според одбраната сијалица, оптимална потребна количина би била <b>'+optQty+'</b> ('+(radijacija*optQty).toFixed(2)+'W UV-C)<p>';
+			optimalnaQtyHtml.append(html);
+		}
+				
 		$('#prostorija').val()=='' ? $('#infoReport').hide() : $('#infoReport').show();
 	});
 });
