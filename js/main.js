@@ -2,9 +2,9 @@ $(document).ready(function(){
 
 // 	($('#prostorija').val()=='' || $('#tuvSelect').val()=='') ? $('#infoReport').hide() : $('#infoReport').show()
 	
-	$('#prostorija').on('keyup',function(){
-		$(this).val()=='' ? $('#infoReport').hide() : $('#infoReport').show(); 
-	});
+// 	$('#prostorija').on('keyup',function(){
+// 		$(this).val()=='' ? $('#infoReport').hide() : $('#infoReport').show(); 
+// 	});
 	
 	$(document).on('keyup','#prostorija',function(){
 		let prostorija=parseInt($('#prostorija').val());
@@ -18,7 +18,8 @@ $(document).ready(function(){
 		$('.potrebnaRadijacija').append(info);
 		$('.prostor').html(prostorija);
 		$('.radijacija').html(radijacijaProstor.toFixed(4));
-		$('#infoReport').show();
+// 		$('#infoReport').show();
+		$(this).val()=='' ? $('#infoReport').hide() : $('#infoReport').show();
 		// $('.potrebnaRadijacija').html(radijacijaProstor);
 	})
 	
