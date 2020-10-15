@@ -13,13 +13,13 @@ $(document).ready(function(){
 		$('.optimalnaKolicina').html("");
 		$('.potrebnaRadijacija').html("");
 		let info="<p>За дезинфекција на простор од <span class='prostor'></span>m<sup>2</sup> потребни се <span class='radijacija'></span>W UV-C зрачење</p>";
-		radijacijaProstor=parseFloat(prostorija)*0.35*1.25/0.8;
+		let radijacijaProstor=parseFloat(prostorija)*0.35*1.25/0.8;
 
 		$('.potrebnaRadijacija').append(info);
 		$('.prostor').html(prostorija);
 		$('.radijacija').html(radijacijaProstor.toFixed(4));
 // 		$('#infoReport').show();
-		$(this).val()=='' ? $('#infoReport').hide() : $('#infoReport').show();
+		$('#prostorija').val()=='' ? $('#infoReport').hide() : $('#infoReport').show();
 		// $('.potrebnaRadijacija').html(radijacijaProstor);
 	})
 	
@@ -33,6 +33,6 @@ $(document).ready(function(){
 		let optQty=Math.ceil(radijacijaProstor/radijacija);
 		html='<p>Според одбраната сијалица, оптимална потребна количина би била <b>'+optQty+'</b> ('+(radijacija*optQty).toFixed(2)+'W UV-C)<p>';
 		optimalnaQtyHtml.append(html);
-		$('#infoReport').show();
+		$('#prostorija').val()=='' ? $('#infoReport').hide() : $('#infoReport').show();
 	});
 });
