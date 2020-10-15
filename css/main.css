@@ -1,6 +1,18 @@
 	 body {
-		 background-color: #bfbdff;
+		/* background-color: #bfbdff; */
+		 background-repeat: no-repeat;
+		 background-size: cover;
+		 /* background-position: top; */
+		 background-image: url("https://www.signify.com/content/dam/signify/en-aa/innovation/uv-c/uvc-lighting-mh-l.jpg");
+		 color: #C4FDC7;
+		 height: 100vh;
 	 }
+	div#infoReport {
+	    /* border: 1px solid; */
+	    padding: 2%;
+	    background-color: rgba(235,254,236,0.15);
+	    box-shadow: 0px 1px 6px 4px #ebfeec70;
+	}
 	 /*  FOOTER  */
 	footer {
 		position: absolute;
