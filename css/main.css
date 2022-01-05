@@ -34,3 +34,8 @@
 		text-decoration: none;
 		color: inherit;
 	}
+
+	.link:hover {
+		color: #409cff;
+		text-decoration: none;
+	}
