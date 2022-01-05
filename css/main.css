@@ -22,4 +22,10 @@
 		display: inline-block;
 		text-align: center;
 		width: 100%;
+		background: #00000045;
+	}
+
+	footer p {
+		margin: 0.5rem auto;
+		text-shadow: 0px 0px 2px white;
 	}
